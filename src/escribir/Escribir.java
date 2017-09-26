@@ -6,24 +6,30 @@ import java.io.*;
 public class Escribir {
 
     public void escribir(String entrada,String  token){
-        File archivo;
-        try{
-            archivo=new File("C:\\archivos\\salida.txt");
-            if ( archivo.createNewFile())
-            {
-                System.out.println("se creo archivo ");
 
-            }
-          FileWriter e=new FileWriter(archivo);
-            e.write(entrada);
-            e.write(token);
-            e.close();
+        /*try {
+            FileWriter fstream = new FileWriter("C:\\archivos\\salida.txt", true);
+            BufferedWriter out = new BufferedWriter(fstream);
 
-        } catch (IOException e)
-        {
-            System.out.println("no se ha creado ");
+            out.write(entrada);
+            out.write(token);
+            out.close();
+        } catch (IOException ex) {
+            System.out.println("Error: "+ex.getMessage());
         }
-
+*/
+        int i;
+        try {
+            FileWriter fstream = new FileWriter("C:\\archivos\\salida.txt", true);
+            BufferedWriter out = new BufferedWriter(fstream);
+            out.newLine();
+            out.write(entrada+"  ");
+            out.write(token);
+            out.close();
+        } catch (IOException ex) {
+            System.out.println("Error: "+ex.getMessage());
+        }
+    }
     }
 
-}
+

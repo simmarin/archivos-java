@@ -30,15 +30,15 @@ public class LeerToken {
                 h++;
             }
 
-            System.out.print ("MATRIZ\n\n");
+            System.out.print ("TOKENS\n\n");
             for (int j= 0; j <matriz.length; j++) {
 
                 for(int o= 0; o <matriz[0].length; o++) {
 
-                    System.out.print(matriz[j][o] + " ");
+                   System.out.print(matriz[j][o] + " ");
 
                 }
-                System.out.println();
+               System.out.println();
             }
         }
         catch(IOException e){

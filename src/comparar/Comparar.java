@@ -1,24 +1,58 @@
 package comparar;
 import java.util.regex.*;
-import leer.LeerToken;
-import  leer.LeerEntrada;
+
 
 public class Comparar {
+public boolean resultado;
+public String entrada;
+public String nomToken;
+
+    public void valida( String patron,String archivoToken[][],String nombreToken,String archivoEntrada[][]) {
+
+        String nombreT=nombreToken;
+        String PATTERN_EMAIL =(patron);
+          //String PATTERN_EMAIL =(patron[0][0]);
+        Pattern pattern = Pattern.compile(PATTERN_EMAIL);
+
+        for (int j= 0; j <archivoEntrada.length; j++) {
+
+            for(int o= 0; o <archivoEntrada[0].length; o++) {
+
+                Matcher matcher = pattern.matcher(archivoEntrada[j][o]);
+                boolean mtemp= matcher.matches();
+                String posiciontemp=archivoEntrada[j][o];
 
 
-    public static boolean validate( String patron[][],String Entrada[][]) {
 
 
-        String PATTERN_EMAIL ="^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$";
-        //String PATTERN_EMAIL =(patron[0][0]);
 
-                Pattern pattern = Pattern.compile(PATTERN_EMAIL);
+                if(mtemp==true) {
+                    entrada=posiciontemp;
+                    resultado=mtemp;
+                    for (int m= 0; m <archivoToken.length; m++) {
+
+                        for(int n= 0; n <archivoToken[0].length; n++) {
+                            boolean ntemp= new String(nombreT).equals(archivoToken[m][n]);
+                            String postemp=archivoToken[m][n];
+
+                            if(ntemp==true) {
+                              nomToken=postemp;
+                            }
+                        }
+                    }
+                }
 
 
-        Matcher matcher = pattern.matcher(Entrada[0][0]);
-        return matcher.matches();
+                }
+
+            }
+        }
 
 
-    }
+
 }
+
+
+
+
 
