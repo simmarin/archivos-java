@@ -33,7 +33,7 @@ public class LeerEntrada {
                 h++;
             }
 
-            System.out.print ("ENTRADAS\n\n");
+            System.out.print ("ENTRADA\n\n");
             for (int j= 0; j <matriz2.length; j++) {
 
                 for(int o= 0; o <matriz2[0].length; o++) {
@@ -50,6 +50,7 @@ public class LeerEntrada {
         }
 
     }
+
 
 }
 
